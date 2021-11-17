@@ -1,0 +1,5 @@
+<h1>Explore Sessions</h1>
+
+<% @sessions.reverse.each do |session| %>
+  <%= render "session", session: session %>
+<% end %>

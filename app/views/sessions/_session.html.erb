@@ -1,0 +1,36 @@
+<div class="card text-center mb-3">
+
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to session_path(session) do %>
+        <%= session.title %>
+      <% end %>
+    </h5>
+    <p class="card-text">
+      <%= session.description %>
+      <% if session.user.name %>
+        - <%= link_to session.user.name, user_path(session.user) %>
+      <% end %>
+    </p>
+    <% if session.images.attached? %>
+      <p class="card-text">
+        <div class="row">
+          <% session.images.sample(3).each do |image| %>
+            <div class="col-4">
+              <%= link_to session_path(session) do %>
+                <%= image_tag image, width:"100%" %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </p>
+  </div>
+
+  <%= render "sessions/crud_buttons_as_list_group", session: session if session.user == current_user %>
+  <div class="card-footer text-muted">
+    Image Count (<%= session.images.count %>)<br>
+    Last updated <%= time_ago_in_words(session.updated_at) %><br>
+    Created <%= time_tag session.created_at %>
+  </div>
+</div>

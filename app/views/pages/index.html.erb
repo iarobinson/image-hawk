@@ -1,0 +1,15 @@
+<% if current_user %>
+  <div class="row">
+    <%= link_to "Start a New Session", new_session_path, class: "btn btn-primary btn-block m-3"%>
+  </div>
+  <% if @past_sessions.count > 0 %>
+    <h3>Past Sessions (<%= @past_sessions.count %>)</h3>
+    <% @past_sessions.reverse.each do |session| %>
+      <%= render "sessions/session", session: session %>
+    <% end %>
+  <% else %>
+    <h5 class="py-3">Start a new session to get your photos up for sale.</h5>
+  <% end %>
+<% else %>
+  <%= render "stranger_content" %>
+<% end %>

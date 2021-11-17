@@ -1,0 +1,7 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <%= link_to 'Show', session, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_session_path(session), class: "btn btn-warning" %>
+    <%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </li>
+</ul>
