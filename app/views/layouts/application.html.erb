@@ -23,7 +23,7 @@
           <% if alert %>
             <p class="alert alert-danger"><%= alert %></p>
           <% end %>
-
+          <%= render "users/account_management_tools" if current_user %>
           <%= yield %>
         </div>
       </div>

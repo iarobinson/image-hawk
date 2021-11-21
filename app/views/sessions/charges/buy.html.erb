@@ -1,0 +1,10 @@
+<div class="card my-3">
+  <%= image_tag @attachment.variant(resize_to_limit: [300, 300]), width: "100%", class: "card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title">Want the high resolution photo?</h5>
+    <p class="card-text">The high-resolution photo will be directly downloaded once you complete the payment process.</p>
+    <p class="card-text">Thank you for supporting<%= ", #{@session.user.name}," if @session.user.name%> your photographer!</p>
+    <%= link_to "Buy", "stripe-integration-here", class: "btn btn-primary btn-block col-12 my-1" %>
+    <%= link_to "Back", session_path(@session), class: "btn btn-success btn-block col-12 my-1" %>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="card my-2">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-2 col-md-6 col-sm-6 pb-1">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar, width: "100%" %>
+        <% else %>
+          <%= image_tag "default_avatar.jpg", width: "100%" %>
+        <% end %>
+      </div>
+      <div class="col-lg-10 col-md-6 col-sm-6 py-1">
+
+        <p class="card-text"><%= user.biography if user.biography %></p>
+        <p class="card-text">
+          <small class="text-muted">
+            <strong>Username:</strong> <%= user.name if user.name %><br>
+            <strong>Member Since:</strong> <%= user.created_at.strftime('%b %Y')  %><br>
+          </small>
+        </p>
+      </div>
+    </div>
+    <% if buttons %>
+      <div class="row">
+        <div class="col">
+          <%= link_to "Profile", user_path(user), class: "btn btn-primary btn-block col-12 my-1" %>
+          <%#= link_to "Message", "#", class: "btn btn-success btn-block col-12 my-1" %>
+          <%#= link_to "Work", "#", class: "btn btn-warning btn-block col-12 my-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

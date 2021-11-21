@@ -1,5 +1,4 @@
 <div class="card text-center mb-3">
-
   <div class="card-body">
     <h5 class="card-title">
       <%= link_to session_path(session) do %>
@@ -8,8 +7,8 @@
     </h5>
     <p class="card-text">
       <%= session.description %>
-      <% if session.user.name %>
-        - <%= link_to session.user.name, user_path(session.user) %>
+      <% if session.user %>
+        <%= link_to "- #{session.user.name}", user_path(session.user) if session.user.name %>
       <% end %>
     </p>
     <% if session.images.attached? %>
@@ -18,13 +17,13 @@
           <% session.images.sample(3).each do |image| %>
             <div class="col-4">
               <%= link_to session_path(session) do %>
-                <%= image_tag image, width:"100%" %>
+                <%= image_tag image.representation(resize_to_limit: [200, 200]), width:"100%" %>
               <% end %>
             </div>
           <% end %>
-        <% end %>
-      </div>
-    </p>
+        </div>
+      </p>
+    <% end %>
   </div>
 
   <%= render "sessions/crud_buttons_as_list_group", session: session if session.user == current_user %>

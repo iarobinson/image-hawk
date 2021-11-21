@@ -19,7 +19,7 @@ That way Coco can spend more time taking photos and the surfers can get their im
 
 # Tech
 
-Keep it simple stupid.
+Keep it simple.
 
 - Ruby on Rails (ActionStorage)
 - Bootstrap

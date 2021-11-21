@@ -1,19 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @user.email %>
-</p>
+<%= render "user", user: @user, buttons: false %>
 
-<p>
-  <strong>Created At:</strong>
-  <%= @user.created_at %>
-</p>
+<% if current_user == @user %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary btn-block col-12 my-1" %>
+  <%= link_to 'Back', users_path, class: "btn btn-primary btn-block col-12 my-1" %>
+<% end %>
 
-<p>
-  <strong>Updated At:</strong>
-  <%= @user.updated_at %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Back', users_path %>
+<% @user.sessions.each do |session| %>
+  <%= render "sessions/session", session: session %>
+<% end %>

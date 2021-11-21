@@ -6,7 +6,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get sessions_url
+    get sessions_path
     assert_response :success
   end
 

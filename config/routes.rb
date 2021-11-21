@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/send_it', to: 'charges#buy'
 
   devise_for :users
-  resources  :users
-
-  resources :sessions
+  resources :users
+  resources :sessions do
+    get '/charge', to: 'sessions/charges#buy'
+  end
 end
