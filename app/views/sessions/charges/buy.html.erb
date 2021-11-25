@@ -5,6 +5,9 @@
     <p class="card-text">The high-resolution photo will be directly downloaded once you complete the payment process.</p>
     <p class="card-text">Thank you for supporting<%= ", #{@session.user.name}," if @session.user.name%> your photographer!</p>
     <%= link_to "Buy", "stripe-integration-here", class: "btn btn-primary btn-block col-12 my-1" %>
+    <form action="/create-checkout-session" method="POST">
+      <button type="submit">Checkout</button>
+    </form>
     <%= link_to "Back", session_path(@session), class: "btn btn-success btn-block col-12 my-1" %>
   </div>
 </div>

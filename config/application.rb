@@ -6,6 +6,8 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
 module ImageHawk
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -18,5 +20,6 @@ module ImageHawk
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Stripe.api_key = ENV["STRIPE_SK_TEST_KEY"]
   end
 end

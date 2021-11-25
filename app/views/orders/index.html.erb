@@ -1,0 +1,32 @@
+<div>
+  <h1>List of Products</h1>
+  <%= form_with do |form| %>
+    <h4>Charges/Payments</h4>
+    <div>
+      <% @products_purchase.each do |product| %>
+        <%= radio_button_tag 'orders[product_id]', product.id, @products_purchase.first == product %>
+        <%= product.name %>
+        <%= humanized_money_with_symbol product.price %>
+        <br>
+      <% end %>
+    </div>
+    <h3 class="pt-5">Subscriptions</h3>
+    <hr>
+    <h1>Payment Method</h1>
+    <div>
+      <%= radio_button_tag 'payment-selection', 'stripe', true, onclick: "changeTab();"  %> Stripe<br>
+      <%= radio_button_tag 'payment-selection', 'paypal', false, onclick: "changeTab();" %> Paypal<br>
+    </div>
+
+    <%= submit_tag "Buy it!", class: "btn btn-primary btn-block col-12" %>
+  <% end %>
+</div>
+
+
+<!--<script>-->
+<!--  function changeTab() {-->
+<!--    var newActiveTabID = $('input[name="payment-selection"]:checked').val();-->
+<!--    $('.paymentSelectionTab').removeClass('active');-->
+<!--    $('#tab-' + newActiveTabID).addClass('active');-->
+<!--  }-->
+<!--</script>-->
