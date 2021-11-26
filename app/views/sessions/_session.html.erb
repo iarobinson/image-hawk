@@ -8,7 +8,10 @@
     <p class="card-text">
       <%= session.description %>
       <% if session.user %>
-        <%= link_to "- #{session.user.name}", user_path(session.user) if session.user.name %>
+        <% if session.user.name %>
+          <br>
+          - <%= link_to "#{session.user.name}", user_path(session.user) %>
+        <% end %>
       <% end %>
     </p>
     <% if session.images.attached? %>

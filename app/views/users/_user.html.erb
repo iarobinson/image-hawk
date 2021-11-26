@@ -1,12 +1,14 @@
 <div class="card my-2">
   <div class="card-body">
     <div class="row">
-      <div class="col-lg-2 col-md-6 col-sm-6 pb-1">
+      <div class="col-lg-2 col-md-6 col-sm-6 py-3">
         <%= render 'users/avatar', user: user %>
       </div>
       <div class="col-lg-10 col-md-6 col-sm-6 py-1">
+        <% if user.biography %>
+          <small class="text-muted"><%= user.biography %></small>
+        <% end %>
 
-        <p class="card-text"><%= user.biography if user.biography %></p>
         <p class="card-text">
           <small class="text-muted">
             <strong>Username:</strong> <%= user.name if user.name %><br>

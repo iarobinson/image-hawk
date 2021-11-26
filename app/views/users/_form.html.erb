@@ -11,26 +11,32 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group py-1">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :name %>
+  <div class="form-group py-1">
+    <%= form.label "User Name" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
+
   <div class="row py-1">
-    <div class="col-3">
+    <div class="col-2">
       <%= form.label :current %>
       <%= render "users/avatar", user: user %>
     </div>
-    <div class="col-9">
+    <div class="col-10">
       <div class="form-group">
         <%= form.label :avatar %>
         <%= form.file_field :avatar, multiple: false, direct_upload: true, class: "form-control" %>
       </div>
     </div>
+  </div>
+
+  <div class="form-group py-1">
+    <%= form.label :biography %>
+    <%= form.text_area :biography, class: "form-control" %>
   </div>
 
   <div class="actions">
