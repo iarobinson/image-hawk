@@ -10,7 +10,7 @@
     </small>
 
     <% @session.images.each do |image| %>
-      <%= link_to session_charge_url(@session, image: image) do %>
+      <%= link_to new_session_charge_path(@session, image: image) do %>
         <%= image_tag image.variant(resize_to_limit: [300, 300]), width: "100%", class: "my-3" %>
       <% end %>
     <% end %>

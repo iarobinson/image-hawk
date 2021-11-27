@@ -1,0 +1,27 @@
+<%= form_with(model: charge) do |form| %>
+  <% if charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
+
+      <ul>
+        <% charge.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :success_url %>
+    <%= form.text_field :success_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cancel_url %>
+    <%= form.text_field :cancel_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

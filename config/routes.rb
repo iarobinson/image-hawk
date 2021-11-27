@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post '/orders/submit', to: 'orders#submit'
 
   resources :users
-  resources :sessions do
-    get '/charge', to: 'sessions/charges#buy'
-    post 'charges/create'
+  resources :sessions
+  resources :sessions, module: "sessions" do
+    resources :charges
   end
 end

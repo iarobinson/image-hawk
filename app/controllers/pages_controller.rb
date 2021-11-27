@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def index
-    @past_sessions = current_user.sessions if current_user
+    if current_user
+      @past_sessions = current_user.sessions
+    else
+      @past_sessions = Session.all
+    end
   end
 end

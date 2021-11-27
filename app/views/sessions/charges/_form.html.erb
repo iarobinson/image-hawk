@@ -1,0 +1,20 @@
+<%= form_with(model: charge, url: session_charges_path(@session)) do |form| %>
+  <% if charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
+
+      <ul>
+        <% charge.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :success_url, value: 'http://localhost:3000/success-url-needs-dynamic-generatio' %>
+  <%= form.hidden_field :cancel_url, value: 'http://localhost:3000/cancel-url-needs-dynamic-generatio' %>
+
+  <div class="actions">
+    <%= form.submit "Buy", class: "btn btn-primary btn-block col-12 my-1" %>
+  </div>
+<% end %>

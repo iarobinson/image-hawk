@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_222939) do
+ActiveRecord::Schema.define(version: 2021_11_27_193234) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +43,13 @@ ActiveRecord::Schema.define(version: 2021_11_22_222939) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "charges", force: :cascade do |t|
+    t.string "success_url"
+    t.string "cancel_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -49,20 +59,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_222939) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
-    t.integer "status"
-    t.string "token"
-    t.string "charge_id"
-    t.string "error_message"
-    t.string "customer_id"
-    t.integer "payment_gateway"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "pay_charges", force: :cascade do |t|
@@ -143,22 +139,13 @@ ActiveRecord::Schema.define(version: 2021_11_22_222939) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "stripe_plan_name"
-    t.string "paypal_plan_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "USD", null: false
-  end
-
   create_table "sessions", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "default_price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
@@ -173,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_222939) do
     t.string "slug"
     t.string "name"
     t.text "biography"
+    t.integer "default_price_cents", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
