@@ -11,28 +11,40 @@ class Sessions::ChargesController < ApplicationController
   end
 
   def new
+    successful_charge_url = Rails.root.to_s + session_charges_path(@session)
+    cancel_charge_url =
     @charge = Charge.new
     @attachment = ActiveStorage::Attachment.find(params[:image])
   end
 
   def create
-    session = Stripe::Checkout::Session.create({
+    @charge = Charge.new(charge_params)
+    @charge.success_url = "This is the link to the correct place to redirect people who have paid"
+    @charge.cancel_url = session_path(@session)
+
+    stripe_session = Stripe::Checkout::Session.create({
       line_items: [{
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'T-shirt',
-            },
-            unit_amount: 3000,
-          },
-          quantity: 1,
-        }],
+                     price_data: {
+                       currency: 'usd',
+                       product_data: {
+                         name: "Download the high resolution photo",
+                       },
+                       unit_amount: @session.default_price_cents,
+                     },
+                     quantity: 1,
+                   }],
       mode: 'payment',
-      success_url: charge_params["success_url"],
-      cancel_url: charge_params["cancel_url"],
+      success_url: @charge.success_url,
+      cancel_url: @charge.cancel_url,
     })
 
-    redirect_to session.url
+    respond_to do |format|
+      if @session.save
+        redirect_to stripe_session.url
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
@@ -42,26 +54,6 @@ class Sessions::ChargesController < ApplicationController
     end
 
     def charge_params
-      params.require(:charge).permit(:controller, :cancel_url, :authenticity_token, :success_url)
-    end
-
-    def huh
-      session = Stripe::Checkout::Session.create({
-        line_items: [{
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'T-shirt',
-            },
-            unit_amount: 2000,
-          },
-          quantity: 1,
-        }],
-        mode: 'payment',
-        success_url: 'http://localhost:4242/success.html',
-        cancel_url: 'http://localhost:4242/cancel.html',
-      })
-
-      redirect session.url, 303
+      params.require(:charge).permit()
     end
 end

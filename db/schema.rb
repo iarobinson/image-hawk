@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_11_27_193234) do
   create_table "charges", force: :cascade do |t|
     t.string "success_url"
     t.string "cancel_url"
+    t.string "asset_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

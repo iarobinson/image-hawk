@@ -13,6 +13,7 @@
 
   <%= form.hidden_field :success_url, value: 'http://localhost:3000/success-url-needs-dynamic-generatio' %>
   <%= form.hidden_field :cancel_url, value: 'http://localhost:3000/cancel-url-needs-dynamic-generatio' %>
+  <%= form.hidden_field :attachment_id, value: attachment_id %>
 
   <div class="actions">
     <%= form.submit "Buy", class: "btn btn-primary btn-block col-12 my-1" %>
