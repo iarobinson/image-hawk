@@ -2,29 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b289998-92ca-474f-90b3-85d0d8ee320c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/order.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/_avatar.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/money.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20211122222846_create_products.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20211122222939_create_orders.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/sessions/charges/_display.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/sessions/charges/success.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/image_hawk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image_hawk.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/buy.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/buy.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/buy.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/charge.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/charge.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/order.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20211127193234_create_charges.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20211127193234_create_charges.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,16 +64,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/sessions/charges" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/sessions/charges" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/sessions" />
+      <recent name="$PROJECT_DIR$/app/views/sessions/charges" />
       <recent name="$PROJECT_DIR$/app/controllers/sessions" />
+      <recent name="$PROJECT_DIR$/app/controllers/sessions/charges" />
+      <recent name="$PROJECT_DIR$/app/views/sessions" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.server">
+  <component name="RunManager" selected="Rails.Development: image_hawk">
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -255,13 +261,6 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Rails.Development: image_hawk" />
-      <item itemvalue="Rails.Production: image_hawk" />
-      <item itemvalue="Rails.server" />
-      <item itemvalue="Rake.spec: image_hawk" />
-      <item itemvalue="Rake.test: image_hawk" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
@@ -278,7 +277,14 @@
       <workItem from="1637435196418" duration="3163000" />
       <workItem from="1637497335315" duration="7694000" />
       <workItem from="1637683102011" duration="6017000" />
-      <workItem from="1637872782598" duration="2064000" />
+      <workItem from="1637872782598" duration="5756000" />
+      <workItem from="1637951120738" duration="26475000" />
+      <workItem from="1638273315480" duration="569000" />
+      <workItem from="1638273963487" duration="9650000" />
+      <workItem from="1638915008743" duration="436000" />
+      <workItem from="1638935907481" duration="6192000" />
+      <workItem from="1639403901674" duration="1432000" />
+      <workItem from="1639405661982" duration="6522000" />
     </task>
     <servers />
   </component>
@@ -303,21 +309,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb</url>
-          <line>15</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="7" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/javascript/packs/application.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/image_hawk@rails_s.rcov" NAME="rails s Coverage Results" MODIFIED="1637360709547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
-    <SUITE FILE_PATH="coverage/image_hawk@console.rcov" NAME="console Coverage Results" MODIFIED="1637691511279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
-    <SUITE FILE_PATH="coverage/image_hawk@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637691432248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
-    <SUITE FILE_PATH="coverage/image_hawk@server.rcov" NAME="server Coverage Results" MODIFIED="1637872883100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
+    <SUITE FILE_PATH="coverage/image_hawk@Development__image_hawk.rcov" NAME="Development: image_hawk Coverage Results" MODIFIED="1639405707403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
   </component>
 </project>

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :charges
   resources :sessions
   resources :sessions, module: "sessions" do
-    resources :charges
+    resources :charges do
+      get :success, to: 'charges#success'
+    end
   end
 end

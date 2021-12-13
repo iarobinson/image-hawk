@@ -1,6 +1,6 @@
 class Sessions::ChargesController < ApplicationController
   before_action :set_session
-  before_action :set_charge, only: [:show, :edit, :update, :destroy]
+  before_action :set_charge, only: [:show, :success]
 
   def buy
     @attachment = ActiveStorage::Attachment.find(params[:image])
@@ -15,13 +15,26 @@ class Sessions::ChargesController < ApplicationController
     @attachment = ActiveStorage::Attachment.find(params[:image])
   end
 
+  def show
+  end
+
+  def success
+    @charge.update(payment_successful: true)
+    @attachment = ActiveStorage::Attachment.find(@charge.asset_id)
+  end
+
   def create
     @charge = Charge.new(charge_params)
 
     if @charge.save
       the_root_url = URI.join(root_url).to_s.chomp('/')
-      @charge.success_url = the_root_url + session_charge_path(@session, @charge)
-      @charge.cancel_url = the_root_url + session_path(@session)
+
+      success_url = the_root_url + session_charge_success_path(@session, @charge)
+      cancel_url = the_root_url + session_path(@session)
+      p `success_url = #{success_url} | cancel_url = #{cancel_url}`
+
+      @charge.update("success_url": success_url)
+      @charge.update("cancel_url": cancel_url)
 
       stripe_session = Stripe::Checkout::Session.create({
         line_items: [{
@@ -51,10 +64,10 @@ class Sessions::ChargesController < ApplicationController
     end
 
     def set_charge
-      @charge = Charge.find(params[:id])
+      @charge = Charge.find(params[:charge_id])
     end
 
     def charge_params
-      params.require(:charge).permit()
+      params.require(:charge).permit(:asset_id)
     end
 end

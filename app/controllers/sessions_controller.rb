@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: %i[ show explore index ]
 
   def index
     @sessions = current_user.sessions
@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     @session.user = current_user
+    @session.default_price_cents = 3000
 
     respond_to do |format|
       if @session.save

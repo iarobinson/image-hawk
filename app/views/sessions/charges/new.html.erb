@@ -2,7 +2,7 @@
   <%= image_tag @attachment.variant(resize_to_limit: [300, 300]), width: "100%", class: "card-img-top" %>
   <div class="card-body">
     <h5 class="card-title">Want the high resolution photo?</h5>
-    <h3>Price: <%= @session.default_price_cents %></h3>
+    <h3>Price: $<%= @session.default_price %></h3>
     <p class="card-text">The high-resolution photo will be directly downloaded once you complete the payment process.</p>
     <p class="card-text">Thank you for supporting<%= ", #{@session.user.name}," if @session.user.name%> your photographer!</p>
 
@@ -11,3 +11,4 @@
     <%= link_to "Back", session_path(@session), class: "btn btn-success btn-block col-12 my-1" %>
   </div>
 </div>
+<%= render 'users/user', user: @session.user, buttons: false %>
