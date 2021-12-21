@@ -25,13 +25,19 @@ class Sessions::ChargesController < ApplicationController
 
   def create
     @charge = Charge.new(charge_params)
+    @charge.seller = @session.user
+    @charge.session = @session
+    if current_user == nil
+      redirect_to new_user_registration_path, notice: "Sorry, we need your email to mail you a copy of your photo. Please sign in or sign up."
+    else
+      @charge.purchaser = current_user
+    end
 
     if @charge.save
       the_root_url = URI.join(root_url).to_s.chomp('/')
 
       success_url = the_root_url + session_charge_success_path(@session, @charge)
       cancel_url = the_root_url + session_path(@session)
-      p `success_url = #{success_url} | cancel_url = #{cancel_url}`
 
       @charge.update("success_url": success_url)
       @charge.update("cancel_url": cancel_url)
@@ -54,7 +60,7 @@ class Sessions::ChargesController < ApplicationController
       redirect_to stripe_session.url
     else
       redirect_to @session, notice: "Sorry, something went wrong."
-    end
+    end                
   end
 
   private

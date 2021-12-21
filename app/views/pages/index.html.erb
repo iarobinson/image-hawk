@@ -7,6 +7,14 @@
   <% else %>
     <h5 class="py-3">Start a new session to get your photos up for sale.</h5>
   <% end %>
+  <h3>Purchases</h3>
+  <% if @purchases.count > 0 %>
+    <% @purchases.each do |purchase| %>
+      <%= render 'charges/charge', charge: purchase %>
+    <% end %>
+  <% else %>
+    <p>You have no purchases just yet.</p>
+  <% end %>
 <% else %>
   <%= render "stranger_content" %>
   <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>

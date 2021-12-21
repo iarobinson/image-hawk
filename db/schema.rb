@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_193234) do
+ActiveRecord::Schema.define(version: 2021_12_21_154632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2021_11_27_193234) do
     t.boolean "payment_successful", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "seller_id"
+    t.bigint "purchaser_id"
+    t.bigint "session_id"
+    t.index ["purchaser_id"], name: "index_charges_on_purchaser_id"
+    t.index ["seller_id"], name: "index_charges_on_seller_id"
+    t.index ["session_id"], name: "index_charges_on_session_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -170,6 +176,8 @@ ActiveRecord::Schema.define(version: 2021_11_27_193234) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "charges", "users", column: "purchaser_id"
+  add_foreign_key "charges", "users", column: "seller_id"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"

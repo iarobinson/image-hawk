@@ -1,0 +1,11 @@
+<% if charge.payment_successful %>
+  <div class="card mb-3">
+    <%= image_tag ActiveStorage::Attachment.find(charge.asset_id), class: "card-img-top" %>
+    <div class="card-body">
+      <p class="card-text text-end">
+        <span class="badge rounded-pill bg-success text-end">Payment Successful #<%= charge.id %></span>
+      </p>
+<!--      <p class="card-text"><small class="text-muted"><%#= charge.session.inspect %></small></p>-->
+    </div>
+  </div>
+<% end %>
