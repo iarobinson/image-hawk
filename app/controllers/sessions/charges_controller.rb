@@ -1,6 +1,7 @@
 class Sessions::ChargesController < ApplicationController
   before_action :set_session
   before_action :set_charge, only: [:show, :success]
+  before_action :authenticate_user!, only: [:create]
 
   def buy
     @attachment = ActiveStorage::Attachment.find(params[:image])
@@ -26,21 +27,16 @@ class Sessions::ChargesController < ApplicationController
   def create
     @charge = Charge.new(charge_params)
     @charge.seller = @session.user
+    @charge.purchaser = current_user
     @charge.session = @session
-    if current_user == nil
-      redirect_to new_user_registration_path, notice: "Sorry, we need your email to mail you a copy of your photo. Please sign in or sign up."
-    else
-      @charge.purchaser = current_user
-    end
 
     if @charge.save
       the_root_url = URI.join(root_url).to_s.chomp('/')
-
       success_url = the_root_url + session_charge_success_path(@session, @charge)
       cancel_url = the_root_url + session_path(@session)
 
-      @charge.update("success_url": success_url)
-      @charge.update("cancel_url": cancel_url)
+      @charge.update "success_url": success_url
+      @charge.update "cancel_url": cancel_url
 
       stripe_session = Stripe::Checkout::Session.create({
         line_items: [{

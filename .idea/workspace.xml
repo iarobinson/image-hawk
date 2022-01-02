@@ -2,29 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b289998-92ca-474f-90b3-85d0d8ee320c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/sessions/charges/_display.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/sessions/charges/success.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/image_hawk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image_hawk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/charge.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/charge.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/order.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/charges/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/charges/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20211127193234_create_charges.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20211127193234_create_charges.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +264,12 @@
       <workItem from="1638915008743" duration="436000" />
       <workItem from="1638935907481" duration="6192000" />
       <workItem from="1639403901674" duration="1432000" />
-      <workItem from="1639405661982" duration="6522000" />
+      <workItem from="1639405661982" duration="14296000" />
+      <workItem from="1640027174031" duration="9083000" />
+      <workItem from="1640283510726" duration="414000" />
+      <workItem from="1640631073858" duration="653000" />
+      <workItem from="1640726600309" duration="607000" />
+      <workItem from="1641151031780" duration="3718000" />
     </task>
     <servers />
   </component>
@@ -318,6 +303,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/image_hawk@Development__image_hawk.rcov" NAME="Development: image_hawk Coverage Results" MODIFIED="1639405707403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
+    <SUITE FILE_PATH="coverage/image_hawk@Development__image_hawk.rcov" NAME="Development: image_hawk Coverage Results" MODIFIED="1641151038596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
   </component>
 </project>
