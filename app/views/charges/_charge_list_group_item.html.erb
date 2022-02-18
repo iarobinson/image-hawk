@@ -1,0 +1,16 @@
+<li class="list-group-item">
+  <div class="row">
+    <div class="col">
+      <%= image_tag charge.full_size_asset_storage_url(charge.asset_id), width: "100px" %>
+    </div>
+    <div class="col">
+      <%= link_to "Success URL", charge.success_url, class: "btn btn-primary" %>
+    </div>
+    <div class="col">
+      <%= link_to "Success URL", charge.success_url, class: "btn btn-primary" %>
+    </div>
+    <div class="col">
+      <%= link_to 'Show', charge, class: "btn btn-primary" %>
+    </div>
+  </div>
+</li>

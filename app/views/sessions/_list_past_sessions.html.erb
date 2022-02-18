@@ -1,4 +1,6 @@
-<h3>Most Recent Sessions (<%= past_sessions.count %>)</h3>
+<div class="row py-3">
+  <h3>Most Recent Sessions (<%= past_sessions.count %>)</h3>
+</div>
 <% past_sessions.reverse.each do |session| %>
   <%= render "sessions/session", session: session %>
 <% end %>

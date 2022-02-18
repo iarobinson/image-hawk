@@ -1,25 +1,22 @@
 class ChargesController < ApplicationController
   before_action :set_charge, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[index, update]
 
-  # GET /charges or /charges.json
   def index
-    @charges = Charge.all
+    @charges_buys = Charge.where(purchaser_id: current_user.id)
+    @charges_sales = Charge.where(seller_id: current_user.id)
   end
 
-  # GET /charges/1 or /charges/1.json
   def show
   end
 
-  # GET /charges/new
   def new
     @charge = Charge.new
   end
 
-  # GET /charges/1/edit
   def edit
   end
 
-  # POST /charges or /charges.json
   def create
     @charge = Charge.new(charge_params)
 
@@ -34,7 +31,6 @@ class ChargesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /charges/1 or /charges/1.json
   def update
     respond_to do |format|
       if @charge.update(charge_params)
@@ -47,22 +43,23 @@ class ChargesController < ApplicationController
     end
   end
 
-  # DELETE /charges/1 or /charges/1.json
   def destroy
-    @charge.destroy
     respond_to do |format|
-      format.html { redirect_to charges_url, notice: "Charge was successfully destroyed." }
-      format.json { head :no_content }
+        format.html { redirect_to charges_url, notice: "We don't delete the charges." }
+        format.json { head :no_content }
     end
+    # @charge.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to charges_url, notice: "Charge was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_charge
       @charge = Charge.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def charge_params
       params.require(:charge).permit(:success_url, :cancel_url)
     end

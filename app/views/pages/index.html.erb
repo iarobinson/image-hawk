@@ -1,21 +1,22 @@
-<% if current_user %>
-  <div class="row">
-    <%= link_to "Start a New Session", new_session_path, class: "btn btn-primary btn-block m-3"%>
-  </div>
-  <% if @past_sessions.count > 0 %>
-    <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
-  <% else %>
-    <h5 class="py-3">Start a new session to get your photos up for sale.</h5>
-  <% end %>
-  <h3>Purchases</h3>
-  <% if @purchases.count > 0 %>
-    <% @purchases.each do |purchase| %>
-      <%= render 'charges/charge', charge: purchase %>
+<div class="row">
+  <div class="<%= common_column_spacing %>">
+    <% if current_user %>
+      <% if @past_sessions.count > 0 %>
+        <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
+      <% else %>
+        <h5 class="py-3">Start a new session to get your photos up for sale.</h5>
+      <% end %>
+      <h3>Purchases</h3>
+      <% if @purchases.count > 0 %>
+        <% @purchases.each do |charge| %>
+          <%= render 'charges/charge', charge: charge %>
+        <% end %>
+      <% else %>
+        <p>You have no purchases just yet.</p>
+      <% end %>
+    <% else %>
+      <%= render "stranger_content" %>
+      <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
     <% end %>
-  <% else %>
-    <p>You have no purchases just yet.</p>
-  <% end %>
-<% else %>
-  <%= render "stranger_content" %>
-  <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
-<% end %>
+  </div>
+</div>

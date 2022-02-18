@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b289998-92ca-474f-90b3-85d0d8ee320c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/charges/_charge_list_group_item.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/pages/about.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20220208173558_add_amount_to_charge.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions/charges_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/charges_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/charges_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/charge.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/charge.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/charges/_charge.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/charges/_charge.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/charges/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/charges/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/_stranger_content.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/_list_past_sessions.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/_list_past_sessions.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/explore.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/explore.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_account_management_tools.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_account_management_tools.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +291,18 @@
       <workItem from="1640283510726" duration="414000" />
       <workItem from="1640631073858" duration="653000" />
       <workItem from="1640726600309" duration="607000" />
-      <workItem from="1641151031780" duration="3718000" />
+      <workItem from="1641151031780" duration="5225000" />
+      <workItem from="1641223529249" duration="633000" />
+      <workItem from="1641397714198" duration="136000" />
+      <workItem from="1641489238693" duration="492000" />
+      <workItem from="1641572042728" duration="769000" />
+      <workItem from="1643139162518" duration="1471000" />
+      <workItem from="1643299353488" duration="1462000" />
+      <workItem from="1643387738569" duration="1159000" />
+      <workItem from="1644334608427" duration="7646000" />
+      <workItem from="1644691683144" duration="502000" />
+      <workItem from="1644848947226" duration="825000" />
+      <workItem from="1644957889282" duration="4616000" />
     </task>
     <servers />
   </component>
@@ -303,6 +336,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/image_hawk@Development__image_hawk.rcov" NAME="Development: image_hawk Coverage Results" MODIFIED="1641151038596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
+    <SUITE FILE_PATH="coverage/image_hawk@Development__image_hawk.rcov" NAME="Development: image_hawk Coverage Results" MODIFIED="1645218555165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="image_hawk" />
   </component>
 </project>

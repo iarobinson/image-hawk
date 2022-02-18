@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
+gem 'material_icons'
 gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 gem 'bootsnap', '>= 1.4.4', require: false

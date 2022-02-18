@@ -7,4 +7,7 @@ class PagesController < ApplicationController
       @past_sessions = Session.all
     end
   end
+
+  def about
+  end
 end

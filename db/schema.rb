@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_154632) do
+ActiveRecord::Schema.define(version: 2022_02_08_173558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_154632) do
     t.bigint "seller_id"
     t.bigint "purchaser_id"
     t.bigint "session_id"
+    t.integer "{:amount=>{:null=>true, :default=>3000}}_cents", default: 0, null: false
+    t.string "{:amount=>{:null=>true, :default=>3000}}_currency", default: "USD", null: false
     t.index ["purchaser_id"], name: "index_charges_on_purchaser_id"
     t.index ["seller_id"], name: "index_charges_on_seller_id"
     t.index ["session_id"], name: "index_charges_on_session_id"

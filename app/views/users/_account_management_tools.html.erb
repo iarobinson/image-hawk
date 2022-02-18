@@ -1,11 +1,27 @@
-<div class="row py-3">
-  <div class="col">
-    <%= link_to "Home", root_path, class: "btn btn-primary btn-block col-12" %>
+<div class="row">
+  <div class="col pt-3">
+    <%= link_to root_path, class: "btn btn-primary btn-block col-12" do %>
+      <i class="material-icons">home</i>
+    <% end %>
   </div>
-  <div class="col">
-    <%= link_to "Explore", explore_path, class: "btn btn-warning btn-block col-12" %>
+  <div class="col pt-3">
+    <%= link_to explore_path, class: "btn btn-warning btn-block col-12" do %>
+      <i class="material-icons">explore</i>
+    <% end %>
   </div>
-  <div class="col">
-    <%= link_to "Profile", edit_user_path(current_user), class: "btn btn-success btn-block col-12" %>
+  <div class="col pt-3">
+    <%= link_to edit_user_path(current_user), class: "btn btn-success btn-block col-12" do %>
+      <i class="material-icons">face</i>
+    <% end %>
+  </div>
+  <div class="col pt-3">
+    <%= link_to new_session_path, class: "btn btn-primary btn-block col-12" do %>
+      <i class="material-icons">crop_original</i>
+  <% end %>
+  </div>
+  <div class="col pt-3">
+    <%= link_to charges_path, class: "btn btn-success btn-block col-12" do %>
+      <i class="material-icons">attach_money</i>
+    <% end %>
   </div>
 </div>
