@@ -1,7 +1,6 @@
 class Sessions::ChargesController < ApplicationController
   before_action :set_session
   before_action :set_charge, only: [:show, :success]
-  before_action :authenticate_user!, only: [:create]
 
   def buy
     @attachment = ActiveStorage::Attachment.find(params[:image])
@@ -27,7 +26,7 @@ class Sessions::ChargesController < ApplicationController
   def create
     @charge = Charge.new(charge_params)
     @charge.seller = @session.user
-    @charge.purchaser = current_user
+    @charge.purchaser = current_user if current_user
     @charge.session = @session
 
     if @charge.save

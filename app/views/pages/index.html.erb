@@ -4,16 +4,19 @@
       <% if @past_sessions.count > 0 %>
         <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
       <% else %>
-        <h5 class="py-3">Start a new session to get your photos up for sale.</h5>
+        <%= link_to "Click here to start selling your photography", new_session_path, class: "btn btn-primary my-3" %>
       <% end %>
-      <h3>Purchases</h3>
-      <% if @purchases.count > 0 %>
-        <% @purchases.each do |charge| %>
-          <%= render 'charges/charge', charge: charge %>
-        <% end %>
-      <% else %>
-        <p>You have no purchases just yet.</p>
-      <% end %>
+<!--      <h3 class="py-3">Purchases</h3>-->
+      <%# if @purchases.count > 0 %>
+        <%# @purchases.each do |charge| %>
+          <%#= render 'charges/charge', charge: charge %>
+        <%# end %>
+      <%# else %>
+<!--        <p>-->
+<!--          You have not purchased any photography yet. To explore photography for sale,-->
+<!--          <%#= link_to "explore here", explore_path %>.-->
+<!--        </p>-->
+      <%# end %>
     <% else %>
       <%= render "stranger_content" %>
       <%= render "sessions/list_past_sessions", past_sessions: @past_sessions %>
