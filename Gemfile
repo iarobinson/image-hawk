@@ -9,7 +9,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'rails', '~> 7.0'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
@@ -36,9 +36,11 @@ group :development do
 end
 
 group :test do
-    gem 'capybara', '>= 3.26'
+  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
-    gem 'webdrivers'
+  gem 'webdrivers'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -12,3 +12,9 @@ Keep it simple.
 
 - Ruby on Rails (ActionStorage)
 - Bootstrap
+
+# Testing
+
+Hoping to utilize TDD and BDD with cucumber and gherkin.
+
+To run the testing suite run `rake cucumber`

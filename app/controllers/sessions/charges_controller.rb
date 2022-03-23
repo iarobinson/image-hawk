@@ -52,7 +52,7 @@ class Sessions::ChargesController < ApplicationController
         success_url: @charge.success_url,
         cancel_url: @charge.cancel_url,
       })
-      redirect_to stripe_session.url
+      redirect_to stripe_session.url, allow_other_host: true
     else
       redirect_to @session, notice: "Sorry, something went wrong."
     end                
