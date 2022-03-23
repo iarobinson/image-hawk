@@ -14,5 +14,8 @@
   "devDependencies": {
     "webpack-dev-server": "^3"
   },
-  "engines" : { "node": "14.18.2" }
+  "engines" : {
+    "node": "14.18.2",
+    "yarn": "1.22.4"
+  }
 }
