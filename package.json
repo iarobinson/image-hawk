@@ -15,8 +15,8 @@
   },
   "version": "0.1.0",
   "engines": {
-    "node": "14.18.2",
-    "yarn": "1.22.18"
+    "node": "16.13.1",
+    "yarn": "1.22.17"
   },
   "scripts": {
     "build": "esbuild app/javascript/channels/*.js --bundle --outdir=app/assets/builds",
