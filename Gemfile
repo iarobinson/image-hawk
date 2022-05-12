@@ -12,7 +12,7 @@ gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
 gem 'pg'
-gem 'puma', '~> 5.0'
+gem 'puma'
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
 gem "turbo-rails", '~> 1.0.0'
