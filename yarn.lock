@@ -161,6 +161,11 @@
   "resolved" "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz"
   "version" "7.0.0"
 
+"material-icons@^1.10.11":
+  "integrity" "sha512-A0LqelW1j8Ik/8Cf3nKaUyabFrUXaGOpK2CyJvwWuobCDHtuW5hbM4mzyu3C5e4QfC0l8CjFBaP1h5sm91sRjw=="
+  "resolved" "https://registry.npmjs.org/material-icons/-/material-icons-1.10.11.tgz"
+  "version" "1.10.11"
+
 "normalize-path@^3.0.0", "normalize-path@~3.0.0":
   "integrity" "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
   "resolved" "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz"
