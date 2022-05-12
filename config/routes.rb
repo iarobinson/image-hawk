@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about'
   get '/explore', to: 'sessions#explore'
+  get '/test-route', to: 'pages#test'
 
   devise_for :users
   resources :users

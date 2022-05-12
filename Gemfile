@@ -3,24 +3,30 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
+gem 'rails', '~> 7.0.0'
+gem "sprockets-rails"
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
-gem 'rails', '~> 7.0'
 gem 'pg'
 gem 'puma', '~> 5.0'
-gem 'sass-rails', '>= 6'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.7'
-
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
+gem "turbo-rails", '~> 1.0.0'
+gem "stimulus-rails"
+gem 'jbuilder'
 gem 'material_icons'
+gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', require: false
 gem 'devise'
+
+# Use Redis adapter to run Action Cable in production
+gem "redis", "~> 4.0"
 
 group :development, :test do
     gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -29,7 +35,6 @@ end
 group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'pry'
 end

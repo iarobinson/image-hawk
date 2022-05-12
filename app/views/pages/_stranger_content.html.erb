@@ -1,20 +1,22 @@
-<div class="row text-center">
-  <div class="col">
-    <h1 class="py-3">
-      Image Hawk
-      <%= image_tag "image-hawk-logo.png", width: '50px' %>
-    </h1>
-    <p>Image Hawk is a service helps photographers sell photography.</p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1 class="py-3">
+        Image Hawk
+        <%= image_tag "image-hawk-logo.png", width: '50px' %>
+      </h1>
+      <p>Image Hawk is a service helps photographers sell photography.</p>
+    </div>
   </div>
-</div>
-<div class="row py-3">
-  <div class="col-4">
-    <%= link_to "Explore Photos", explore_path, class: "btn btn-primary btn-block col-12" %>
-  </div>
-  <div class="col-4">
-    <%= link_to "Sell Photos", new_user_registration_path, class: "btn btn-primary btn-block col-12" %>
-  </div>
-  <div class="col-4">
-    <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary btn-block col-12" %>
+  <div class="row py-3">
+    <div class="col-4">
+      <%= link_to "Explore Photos", explore_path, class: "btn btn-primary btn-block col-12" %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Sell Photos", new_user_registration_path, class: "btn btn-primary btn-block col-12" %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary btn-block col-12" %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,77 @@
+<div class="container-fluid mt-4 mt-md-5 mb-7">
+  <div class="row">
+    <div class="col-lg-3 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <%= image_tag 'image-hawk-logo.png', width: '40px' %>
+          ImageHawk
+        </div>
+        <div class="list-group list-group-flush" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Earnings</a>
+          <a class="list-group-item list-group-item-action" id="list-purchases-list" data-bs-toggle="list" href="#list-purchases" role="tab" aria-controls="list-purchases">Purchases</a>
+          <a class="list-group-item list-group-item-action" id="list-sessions-list" data-bs-toggle="list" href="#list-sessions" role="tab" aria-controls="list-sessions">Sessions</a>
+          <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-9 mt-4 mt-lg-0 mb-3">
+      <div class="card">
+          <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+              <div class="card-header">
+                <h6 class="card-header-title text-darkblue">
+                  Basic information
+                </h6>
+              </div>
+              <div class="card-body">
+                <h1><%= Date.today.last_month.strftime("%B") %> Earnings ($<%= @this_months_charge_total %>)</h2>
+                <% @purchases.each do |charge| %>
+                  <%= render charge %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-purchases" role="tabpanel" aria-labelledby="list-purchases-list">
+              <div class="card-header">
+                Purchases
+              </div>
+              <div class="card-body">
+                List purchases here
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-sessions" role="tabpanel" aria-labelledby="list-sessions-list">
+              <div class="card-header">
+                Recent Sessions
+              </div>
+              <div class="card-body">
+                <%= link_to "Create new session", new_session_path(current_user), class: "btn btn-primary col-12 mb-3" %>
+                <% @current_user.sessions.each do |session| %>
+                  <%= render session %>
+                <% end %>
+                <h2>Sessions of others:</h2>
+                <% @sessions.each do |session| %>
+                  <%= render session %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+              <div class="card-header">
+                Settings
+              </div>
+              <div class="card-body">
+                <%= render 'users/form', user: current_user %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure you want to sign out?' }, class: "btn btn-danger btn-block col-12 my-1" %>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
