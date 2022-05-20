@@ -16,6 +16,7 @@ Given '{word} is an user who has not signed up for an account' do |user|
 end
 
 When '{word} visits the main page' do |user|
+  p 'asdf'
   visit '/'
 end
 
