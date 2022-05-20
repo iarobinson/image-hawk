@@ -15,8 +15,8 @@ gem 'pg'
 gem 'puma'
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
-gem "turbo-rails", '~> 1.0.0'
-gem "stimulus-rails"
+# gem "turbo-rails", '~> 1.0.0'
+# gem "stimulus-rails"
 gem 'jbuilder'
 gem 'material_icons'
 gem 'mini_magick'
