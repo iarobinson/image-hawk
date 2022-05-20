@@ -44,7 +44,11 @@
         </div>
     </div>
     <h2>Recent sessions:</h2>
-    <% @sessions.each do |session| %>
-        <%= render session %>
-    <% end %>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <% @sessions.each do |session| %>
+                <%= render session %>
+            <% end %>
+        </div>
+    </div>
 </section>

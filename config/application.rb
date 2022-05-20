@@ -11,6 +11,12 @@ module ImageHawk
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # Don't load default test fixtures and scaffolds
+    config.generators do |g|
+      g.test_framework  :test_unit, fixture: false
+      g.scaffold_stylesheet false
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

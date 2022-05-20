@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
 
+  get '/hello-world', to: 'pages#hola_mundo'
   get '/about', to: 'pages#about'
   get '/explore', to: 'sessions#explore'
   get '/test-route', to: 'pages#test'

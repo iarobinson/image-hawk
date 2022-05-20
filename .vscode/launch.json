@@ -10,8 +10,55 @@
             "request": "launch",
             "program": "${workspaceRoot}/bin/rails",
             "args": [
+                "bundle",
+                "exec",
                 "server"
             ]
+        },
+        {
+            "name": "Cucumber",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/cucumber",
+            "args": [
+                "exec",
+                "cucumber",
+                "-t",
+                "@debugger"
+            ]
+        },
+        {
+            "name": "ip rails server",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/rails",
+            "args": [
+                "bundle",
+                "exec",
+                "server",
+                "-b",
+                "192.168.1.82",
+            ],
+        },
+        {
+            "name": "serve with ip",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec rails s -b 192.168.1.82"
+        },
+        {
+            "name": "cucumber",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "bundle exec cucumber"
+        },
+        {
+            "name": "Debug Local File",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${file}"
         }
     ]
 }
