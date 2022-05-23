@@ -15,6 +15,5 @@ Keep it simple.
 
 # Testing
 
-Hoping to utilize TDD and BDD with cucumber and gherkin.
-
-To run the testing suite run `rake cucumber`
+For standard tests: `rails test`
+For cucumber tests: `bundle exec cucumber`
