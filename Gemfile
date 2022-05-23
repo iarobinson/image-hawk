@@ -6,7 +6,6 @@ ruby '3.0.2'
 gem 'rails', '~> 7.0.0'
 gem "sprockets-rails"
 gem 'jquery-rails'
-gem 'bootstrap', '~> 5.1.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"

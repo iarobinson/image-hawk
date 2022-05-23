@@ -11,7 +11,7 @@ The idea was born while surfing in Pavones where surf photographers take great s
 Keep it simple.
 
 - Ruby on Rails (ActionStorage)
-- Bootstrap
+- Bootstrap 5 - Just brought in over CDN right now
 
 # Testing
 
