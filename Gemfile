@@ -13,7 +13,6 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'pg'
 gem 'puma'
 gem "importmap-rails"
-gem 'cssbundling-rails'
 gem "turbo-rails", '~> 1.0.0'
 gem "stimulus-rails"
 gem 'jbuilder'
