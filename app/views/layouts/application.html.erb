@@ -1,13 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>ImageHawk: Tools to Help You Sell Your Photography and Make More Money as a Photographer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A place to sell your photography online. Upload your photography and share low resolution versions for sale to the public.">
+    <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>
+
     <link rel="canonical" href="https://www.imagehawk.app/">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
   </head>
