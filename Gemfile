@@ -6,14 +6,13 @@ ruby '3.0.2'
 gem 'rails', '~> 7.0.0'
 gem "sprockets-rails"
 gem 'jquery-rails'
-gem 'bootstrap', '~> 5.1.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
 gem 'pg'
 gem 'puma'
-gem 'jsbundling-rails'
+gem "importmap-rails"
 gem 'cssbundling-rails'
 gem "turbo-rails", '~> 1.0.0'
 gem "stimulus-rails"
