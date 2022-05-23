@@ -1,0 +1,4 @@
+cocos_picture:
+  name: avatar
+  record: coco (User)
+  blob: cocos_picture_blob

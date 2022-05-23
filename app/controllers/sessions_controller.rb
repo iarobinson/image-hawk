@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ show explore ]
+  before_action :authenticate_user!, except: %i[ index show explore ]
 
   def index
     @sessions = current_user.sessions
@@ -62,6 +62,6 @@ class SessionsController < ApplicationController
     end
 
     def session_params
-      params.require(:session).permit(:title, :description, :user, images: [])
+      params.require(:session).permit(:title, :description, images: [])
     end
 end

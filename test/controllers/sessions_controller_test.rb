@@ -2,7 +2,9 @@ require "test_helper"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @session = sessions(:one)
+    sign_in users(:coco)
+    @session = sessions(:coco_session_one)
+    @session.user_id = User.find_by(email: "coco@imagehawk.app")
   end
 
   test "should get index" do
@@ -10,7 +12,13 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
+  test "should not get new if signed out" do
+    sign_out users(:coco)
+    get new_session_url
+    assert_response :redirect
+  end
+
+  test "should get new if signed in" do
     get new_session_url
     assert_response :success
   end
@@ -24,6 +32,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show session" do
+    sign_out users(:coco)
+    byebug
     get session_url(@session)
     assert_response :success
   end
@@ -34,7 +44,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update session" do
-    patch session_url(@session), params: { session: { description: @session.description, title: @session.title, user: @session.user } }
+    patch session_url(@session), params: { session: { 
+      description: @session.description,
+      title: @session.title }}
     assert_redirected_to session_url(@session)
   end
 
