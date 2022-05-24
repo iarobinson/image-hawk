@@ -40,8 +40,12 @@
                 </h6>
               </div>
               <div class="card-body">
-                <% @earnings.reverse.each do |charge| %>
-                  <%= render charge %>
+                <% if @earnings.count > 0 %>
+                  <% @earnings.reverse.each do |charge| %>
+                    <%= render charge %>
+                  <% end %>
+                <% else %>
+                  <p>No sales yet.</p>
                 <% end %>
               </div>
             </div>
