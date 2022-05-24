@@ -1,38 +1,32 @@
 <section class="mt-6">
   <div class="container">
-    <%= render "user", user: @user, buttons: false %>
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <%= render "user", user: @user, buttons: false %>
+        <%= link_to "Home", root_path, class: "btn btn-primary col-12" %>
+      </div>
+    </div>
 
-    <% if current_user == @user %>
-      <%= link_to 'Dashboard', root_path, class: "btn btn-success btn-block col-12 my-1" %>
-      <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary btn-block col-12 my-1" %>
-      <%= link_to 'Back', users_path, class: "btn btn-primary btn-block col-12 my-1" %>
-    <% end %>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5">
       <% @user.sessions.each do |session| %>
         <div class="col mt-5">
-          <div class="card h-100 shadow-light hover-lift-light">
-            <!-- Featured image -->
-            <a href="#!" class="bg-cover h-250 rounded-top" style="background-image: url('assets/img/unsplash/6.jpeg');"></a>
-            <%= image_tag session.images.first %>
+          <div class="card shadow-light hover-lift-light">
+            <%= image_tag session.images.sample %>
             <div class="card-body">
               <%= link_to session_path(session), class: "h4 text-dark text-decoration-none" do %>
-                <%= session.title %>
+                <%= session.title if session.title %>
               <% end %>
-            </div>
-
-            <!-- Author -->
-            <div class="card-bottom-info">
-              <div class="avatar avatar-sm">
-                <img src="assets/img/uifaces/5.jpg" class="avatar-image rounded-circle" alt="">
-              </div>
-              <span class="text-uppercase-xs text-muted ms-2">
-                David Gilmour
-              </span>
-              <div class="text-uppercase-xs text-muted ms-auto">
-                <i class="far fa-calendar relative-top--1"></i>
-                May 11
-              </div>
+              <p>
+                <%= session.created_at.strftime("%B %-d, %Y") %>
+              </p>
+              <p>
+                Session Photos (<%= session.images.count %>)
+              </p>
+              <p>
+                <%= session.description if session.description %>
+              </p>
+              <%= link_to "See More", session_path(session), class: "btn btn-primary col-12" %>
             </div>
           </div>
         </div>

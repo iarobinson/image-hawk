@@ -24,31 +24,35 @@
             <%= image_tag 'stranger-page/feature-3', class: 'img-fluid position-relative rounded' %>
         </div>
     </div>
-    <div class="container py-5">
-        <div class="row align-items-center">
 
-            <div class="col-md-6 position-relative mt-5 mt-md-0 ps-lg-5">
-                <%= image_tag 'stranger-page/feature-2', class: 'img-fluid position-relative rounded' %>
-            </div>
-            <div class="col-md-6 pe-lg-5">
-                <h2 class="mt-4">
-                    Did someone get a great photo of you?
-                </h2>
-                <p class="lead text-secondary mt-4">
-                    Ask them if they are on ImageHawk.
-                </p>
-
-                <%= link_to "Get Started", new_user_registration_path, class: "btn btn-outline-primary" %>
-                <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-success" %>
-            </div>
+    <div class="row">
+        <div class="col">
+            <h2 class="pt-3">Recent sessions:</h2>
         </div>
     </div>
-    <h2>Recent sessions:</h2>
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <% @sessions.each do |session| %>
-                <%= render session %>
-            <% end %>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5">
+      <% @sessions.reverse.each do |session| %>
+        <div class="col mt-5">
+          <div class="card shadow-light hover-lift-light">
+            <%= image_tag session.images.sample %>
+            <div class="card-body">
+              <%= link_to session_path(session), class: "h4 text-dark text-decoration-none" do %>
+                <%= session.title if session.title %>
+              <% end %>
+              <p>
+                <%= session.created_at.strftime("%B %-d, %Y") %>
+              </p>
+              <p>
+                Session Photos (<%= session.images.count %>)
+              </p>
+              <p>
+                <%= session.description if session.description %>
+              </p>
+              <%= link_to "See More", session_path(session), class: "btn btn-primary col-12" %>
+            </div>
+          </div>
         </div>
+      <% end %>
     </div>
 </section>
