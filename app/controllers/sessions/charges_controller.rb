@@ -37,7 +37,6 @@ class Sessions::ChargesController < ApplicationController
 
       @charge.update "success_url": success_url
       @charge.update "cancel_url": cancel_url
-
       stripe_session = Stripe::Checkout::Session.create({
         line_items: [{
            price_data: {
@@ -53,7 +52,7 @@ class Sessions::ChargesController < ApplicationController
         success_url: @charge.success_url,
         cancel_url: @charge.cancel_url,
       })
-      redirect_to stripe_session.url, data: { turbo: false }, allow_other_host: true
+      redirect_to stripe_session.url, status: 303, allow_other_host: true
     else
       redirect_to @session, notice: "Sorry, something went wrong."
     end

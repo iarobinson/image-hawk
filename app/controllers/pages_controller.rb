@@ -1,8 +1,4 @@
 class PagesController < ApplicationController
-  def hola_mundo
-    render html: '¡'
-  end
-
   def index
     if current_user
       @past_sessions = current_user.sessions
