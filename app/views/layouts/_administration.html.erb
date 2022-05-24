@@ -25,7 +25,7 @@
                 Sessions You Have Published
               </div>
               <div class="card-body">
-                <%= link_to "Create new session", new_session_path(current_user), class: "btn btn-primary col-12 mb-3" %>
+                <%= link_to "Create new session", new_session_path, class: "btn btn-primary col-12 mb-3" %>
                 <% @current_user.sessions.each do |session| %>
                   <%= render session %>
                 <% end %>
@@ -35,14 +35,11 @@
             <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
               <div class="card-header">
                 <h6 class="card-header-title text-darkblue">
-                  Basic information
+                  <%= Date.today.last_month.strftime("%B") %> - <%= Date.today.strftime("%B") %> 
+                  Earnings ($<%= @this_months_charge_total %>)
                 </h6>
               </div>
               <div class="card-body">
-                <h1>
-                  <%= Date.today.last_month.strftime("%B") %> - <%= Date.today.strftime("%B") %> 
-                  Earnings ($<%= @this_months_charge_total %>)
-                </h2>
                 <% @earnings.reverse.each do |charge| %>
                   <%= render charge %>
                 <% end %>

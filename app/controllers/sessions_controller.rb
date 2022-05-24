@@ -23,7 +23,6 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     @session.user = current_user
-    @session.default_price_cents = 3000
 
     respond_to do |format|
       if @session.save
@@ -62,6 +61,6 @@ class SessionsController < ApplicationController
     end
 
     def session_params
-      params.require(:session).permit(:title, :description, images: [])
+      params.require(:session).permit(:title, :description, :default_price_cents, images: [])
     end
 end
