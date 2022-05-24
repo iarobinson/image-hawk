@@ -1,24 +1,26 @@
-<div class="row py-3">
-  <div class="<%= common_column_spacing %>">
-    <div class="card">
-      <div class="card-body">
-        <h1><%= @session.title %></h1>
-        <p><%= @session.description %></p>
+<div class="container">
+  <div class="row py-3">
+    <div class="<%= common_column_spacing %>">
+      <div class="card">
+        <div class="card-body">
+          <h1><%= @session.title %></h1>
+          <p><%= @session.description %></p>
 
-        <small class="text-muted">
-          These photos are purposefully pixelated. For high resolution photos, please purchase individually.
-        </small>
+          <small class="text-muted">
+            These photos are purposefully pixelated. For high resolution photos, please purchase individually.
+          </small>
 
-        <% @session.images.each do |image| %>
-          <%= link_to new_session_charge_path(@session, image: image) do %>
-            <%= image_tag image.variant(resize_to_limit: [300, 300]), width: "100%", class: "my-3" %>
+          <% @session.images.each do |image| %>
+            <%= link_to new_session_charge_path(@session, image: image) do %>
+              <%= image_tag image.variant(resize_to_limit: [300, 300]), width: "100%", class: "my-3" %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
+
+      <%= render 'users/user', user: @session.user, buttons: true %>
+
+      <%= link_to 'Back', root_path, class: "btn btn-primary col-12" %>
     </div>
-
-    <%= render 'users/user', user: @session.user, buttons: true %>
-
-    <%= link_to 'Back', root_path, class: "btn btn-primary col-12" %>
   </div>
 </div>
