@@ -1,3 +1,9 @@
-<% @users.each_with_index do |user, index| %>
-  <%= render 'user', user: user, buttons: true %>
-<% end %>
+<div class="container">
+  <div class="row py-3">
+    <div class="<%= common_column_spacing %>">
+      <% @users.each_with_index do |user, index| %>
+        <%= render 'user', user: user, buttons: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
