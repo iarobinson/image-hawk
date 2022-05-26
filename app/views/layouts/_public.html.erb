@@ -35,7 +35,7 @@
       <% @sessions.reverse.each do |session| %>
         <div class="col mt-5">
           <div class="card shadow-light hover-lift-light">
-            <%= image_tag session.images.sample %>
+            <%= image_tag session.images.sample if session.images.count > 0 %>
             <div class="card-body">
               <%= link_to session_path(session), class: "h4 text-dark text-decoration-none" do %>
                 <%= session.title if session.title %>
