@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def edit
+    ensure_current_user_owns @session
   end
 
   def create
@@ -37,6 +38,7 @@ class SessionsController < ApplicationController
   end
 
   def update
+    ensure_current_user_owns @session
     respond_to do |format|
       if @session.update(session_params)
         format.html { redirect_to @session, notice: "Session was successfully updated." }
@@ -49,6 +51,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    ensure_current_user_owns @session
     @session.destroy
     respond_to do |format|
       format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
@@ -70,6 +73,12 @@ class SessionsController < ApplicationController
     
       params[:session][:images].each do |image|
         @session.images.attach(image)
+      end
+    end
+
+    def ensure_current_user_owns session
+      if current_user != session.user
+        redirect_to root_path, notice: "You can not pass."
       end
     end
 end
