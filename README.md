@@ -4,7 +4,7 @@
 
 ImageHawk helps photographers to sell photography.
 
-The idea was born while surfing in Pavones where surf photographers take great shots but struggle to sell them to the surfers.
+The idea was born while surfing in Costa Rica where surf photographers take great shots but struggle to sell them to the surfers.
 
 # Tech
 
