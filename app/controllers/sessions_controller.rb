@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ index show explore ]
+  before_action :append_images, only: %i[create update]
 
   def index
     @sessions = current_user.sessions
@@ -61,6 +62,14 @@ class SessionsController < ApplicationController
     end
 
     def session_params
-      params.require(:session).permit(:title, :description, :default_price_cents, images: [])
+      params.require(:session).permit(:title, :description, :default_price_cents)
+    end
+
+    def append_images
+      return if params[:session][:images].blank?
+    
+      params[:session][:images].each do |image|
+        @session.images.attach(image)
+      end
     end
 end
