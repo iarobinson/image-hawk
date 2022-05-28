@@ -1,4 +1,10 @@
 <div class="container">
-<div class="row">
-<div class="col">
-If you downloaded this resource under the Free License, remember to always attribute the author which can be done by adding “Vecteezy.com” to your design and linking to vecteezy.com where possible. If you don’t want to give attribution, upgrade to a Pro License for additional benefits.
+  <div class="row py-5">
+    <div class="<%= common_column_spacing %>">
+      <p>The following image was downloaded with a Free License, remember to always attribute the author which can be done by adding <%= link_to '“Vecteezy.com”','https://www.vecteezy.com/vector-art/7725079-eye-logo-simple-and-elegant-logo-for-business' %> to your design and linking to vecteezy.com where possible.</p>
+      <%= link_to 'https://www.vecteezy.com/vector-art/7725079-eye-logo-simple-and-elegant-logo-for-business' do %>
+        <center><%= image_tag 'image-hawk-logo.png', width: "500px" %></center>
+      <% end %>
+    </div>
+  </div>
+</div>
