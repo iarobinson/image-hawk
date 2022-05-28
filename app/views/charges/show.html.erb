@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row py-3">
+    <div class="<%= common_column_spacing %>">
+      <div class="card">
+        <%= image_tag ActiveStorage::Attachment.find(@charge.asset_id), width: "100%" %>
+        <div class="card-body">
+          <p>
+            <strong>Sale Price in USD Cents:</strong>
+            <%= @charge.price_cents %>
+          </p>
 
-<p>
-  <strong>Success url:</strong>
-  <%= @charge.success_url %>
-</p>
+          <p>
+            <strong>Seller Email:</strong>
+            <%= @charge.seller.email %>
+          </p>
 
-<p>
-  <strong>Cancel url:</strong>
-  <%= @charge.cancel_url %>
-</p>
+          <p>
+            <strong>Purchaser Email:</strong>
+            <%= @charge.purchaser.email if @charge.purchaser %>
+          </p>
 
-<%= link_to 'Edit', edit_charge_path(@charge) %> |
-<%= link_to 'Back', charges_path %>
+          <%= link_to 'Edit', edit_charge_path(@charge), class: "btn btn-primary btn-block col-12 my-1" %>
+          <%= link_to 'Back', root_path, class: "btn btn-success btn-block col-12 my-1" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

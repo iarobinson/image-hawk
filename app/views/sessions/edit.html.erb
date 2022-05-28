@@ -7,6 +7,7 @@
 
       <%= link_to 'Show', @session, class: "btn btn-primary my-1 btn-block col-12" %>
       <%= link_to 'Back', root_path, class: "btn btn-primary my-1 btn-block col-12" %>
+      <%= button_to 'Destroy', @session, method: :delete, data: { confirm: 'Are you sure?' }, data_no_turbolink: "true", class: "btn btn-danger btn-block col-12 my-1" %>
     </div>
   </div>
 </div>

@@ -1,10 +1,10 @@
 <div class="card text-center mb-3">
   <div class="card-body">
-    <h5 class="card-title">
+    <h2 class="card-title">
       <%= link_to session_path(session) do %>
         <%= session.title %>
       <% end %>
-    </h5>
+    </h2>
     <p class="card-text">
       <%= session.description %>
       <% if session.user %>
@@ -33,6 +33,7 @@
   <div class="card-footer text-muted">
     Image Count (<%= session.images.count %>)<br>
     Last updated <%= time_ago_in_words(session.updated_at) %><br>
-    Created <%= time_tag session.created_at %>
+    Created <%= time_tag session.created_at %><br>
+    Asking Price Per Photo $<%= session.default_price %> USD
   </div>
 </div>

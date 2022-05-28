@@ -1,4 +1,4 @@
- <div class="card mb-3">
+<div class="card mb-3">
   <div class="card-body">
     <div class="row">
       <div class="col-lg-5">
@@ -17,7 +17,9 @@
         <p><%= time_ago_in_words charge.created_at %></p>
       </div>
       <div class="col-lg-2">
-        <%= image_tag ActiveStorage::Attachment.find(charge.asset_id), width: "100%" %>
+        <%= link_to charge do %>
+          <%= image_tag ActiveStorage::Attachment.find(charge.asset_id), width: "100%" %>
+        <% end %>
       </div>
     </div>
   </div>
