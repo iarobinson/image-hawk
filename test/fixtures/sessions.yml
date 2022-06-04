@@ -1,8 +1,11 @@
 ian_session_one:
- title: The first session for Coco
- description: Today was the first day I shot for image hawk in Tahoe - Ian
- user: users(:ian)
+  id: 1
+  title: The first session for Ian
+  description: Today was the first day I shot for image hawk in Tahoe - Ian
+  user_id: 1
 
 coco_session_one:
- title: The first session for Coco
- description: Today was the first day I shot for image hawk in pavones - Coco
+  id: 2
+  title: The first session for Coco
+  description: Today was the first day I shot for image hawk in pavones - Coco
+  user_id: 2

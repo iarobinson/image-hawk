@@ -1,3 +1,9 @@
-# charge_one:
+charge_one:
+  session_id: 1
+  seller_id: 1
+  asset_id: 320407674
 
-# charge_two:
+charge_two:
+  session_id: 2
+  seller_id: 2
+  asset_id: 320407674

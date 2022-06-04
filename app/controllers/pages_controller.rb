@@ -17,4 +17,7 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def attributions
+  end
 end
