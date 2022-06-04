@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="<%= common_column_spacing %>">
+      <div class="card my-4">
+        <%= image_tag "error-message-image.jpg", width: "100%" %>
+        <div class="card-header">
+          <h3>
+            <%= image_tag 'image-hawk-logo.png', width: '40px' %>
+            ImageHawk Error: Internal Server Error
+          </h3>
+        </div>
+        <div class="card-body">
+          <p>Something went wrong with our systems...</p>
+          <%= render "layouts/contact_admin_via_whatsapp" %>
+          <p>To get back to your photos, please click the button below:</p>
+          <%= link_to "Desktop", root_url, class: "btn btn-primary btn-block col-12" %>
+          <%= %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

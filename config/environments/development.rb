@@ -18,7 +18,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports.
+  # Show full error reports. 
+  # Change this to locally get default rails error messages.
+  # Restart rails local server for changes to go into effect.
   config.consider_all_requests_local = true
 
   # Enable server timing

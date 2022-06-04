@@ -17,3 +17,7 @@ Keep it simple.
 
 For standard tests: `rails test`
 For cucumber tests: `bundle exec cucumber`
+
+# Thanks
+
+- [Custom Error Pages Guide](https://web-crunch.com/posts/custom-error-page-ruby-on-rails)
