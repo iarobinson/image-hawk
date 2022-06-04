@@ -34,7 +34,6 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show session" do
     sign_out @photographer
-    # byebug
     get session_url(@session)
     assert_response :success
   end
