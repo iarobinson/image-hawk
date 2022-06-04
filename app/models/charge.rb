@@ -3,7 +3,7 @@ class Charge < ApplicationRecord
 
   belongs_to :purchaser, class_name: 'User', optional: true 
   belongs_to :seller, class_name: 'User'
-  belongs_to :session
+  belongs_to :session, optional: true
 
   monetize :price_cents
 

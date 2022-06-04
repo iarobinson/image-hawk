@@ -2,9 +2,12 @@
   <div class="row py-5">
     <div class="<%= common_column_spacing %>">
       <p>The following image was downloaded with a Free License, remember to always attribute the author which can be done by adding <%= link_to '“Vecteezy.com”','https://www.vecteezy.com/vector-art/7725079-eye-logo-simple-and-elegant-logo-for-business' %> to your design and linking to vecteezy.com where possible.</p>
-      <%= link_to 'https://www.vecteezy.com/vector-art/7725079-eye-logo-simple-and-elegant-logo-for-business' do %>
-        <center><%= image_tag 'image-hawk-logo.png', width: "500px" %></center>
-      <% end %>
+      <div class="d-flex justify-content-center">
+        <%= link_to 'https://www.vecteezy.com/vector-art/7725079-eye-logo-simple-and-elegant-logo-for-business' do %>
+          <%= image_tag 'image-hawk-logo.png', width: "500px" %>
+        <% end %>
+      </div>
+      <%= link_to "Dashboard", root_path, class: "btn btn-primary col-12" %>
     </div>
   </div>
 </div>
