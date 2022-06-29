@@ -20,4 +20,8 @@ class PagesController < ApplicationController
 
   def attributions
   end
+
+  private
+  def nothing_happens_here
+  end
 end
