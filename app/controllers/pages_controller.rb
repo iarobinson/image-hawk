@@ -22,6 +22,6 @@ class PagesController < ApplicationController
   end
 
   def the_last_10_sessions
-    Session.limit(15).order(created_at: :desc)
+    Session.limit(10).order(created_at: :desc)
   end
 end
