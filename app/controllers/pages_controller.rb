@@ -10,14 +10,18 @@ class PagesController < ApplicationController
       end
       
     else
-      @past_sessions = Session.all
+      @past_sessions = the_last_10_sessions
     end
-    @sessions = Session.all
+    @sessions = the_last_10_sessions
   end
 
   def about
   end
 
   def attributions
+  end
+
+  def the_last_10_sessions
+    Session.limit(10).order(created_at: :desc)
   end
 end
