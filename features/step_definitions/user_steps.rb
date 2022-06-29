@@ -1,10 +1,5 @@
-Given '{word} is a user who has signed up for an ImageHawk account' do |user|
-  @user = User.new({
-    "email": "test_photographer_user@testing.com",
-    "password": "photographerpassword",
-    "slug": "photographer-test-user",
-    "name": "Test"
-  })
+Given '{word} is an existing user' do |user|
+  sign_up user
 end
 
 Given '{word} signs into the system' do |user|
@@ -12,7 +7,8 @@ Given '{word} signs into the system' do |user|
 end
 
 Given '{word} is an user who has not signed up for an account' do |user|
-  @unknown_user = User.new
+  # @unknown_user = User.new
+  # TODO: This shouldn't do anything really....
 end
 
 When '{word} visits the main page' do |user|
@@ -33,21 +29,33 @@ When '{word} submits valid email, password and password confirmation' do |user|
 end
 
 Then '{word} should see the administration page' do |user|
-  # TODO: This still needs to be implemented for our acceptance tests 
-  # visit '/'
-  # assert page.has_field?("admin-page")
+  expect(page).to have_selector '#admin-page'
+end
+
+Then '{word} should NOT see the administration page' do |user|
+  expect(page).not_to have_selector '#admin-page'
 end
 
 Then '{word} should see the home page' do |user|
-  assert page.has_content?("ImageHawk")
-  assert page.has_no_field?("admin-page")
+  expect(page).not_to have_selector '#admin-page'
+  expect(page).to have_content 'Sell your surf photography online'
 end
 
 def sign_in(user)
-  # visit '/users/sign_in'
-  # within 'new_user' do
-  #   fill_in '#user_email', with: "coco@testing.com"
-  #   fill_in '#user_password', with: "testing"
-  # end
-  # click_on 'Log In'
+  visit '/users/sign_in'
+  within '#new_user' do
+    fill_in 'user_email', with: "coco@testing.com"
+    fill_in 'user_password', with: "testing"
+  end
+  click_on 'Log in'
+end
+
+def sign_up user
+  visit '/users/sign_up'
+  within '#new_user' do
+    fill_in 'user_email', with: "#{user}@imagehawk.app"
+    fill_in 'user_password', with: "testing_password"
+    fill_in 'user_password_confirmation', with: "testing_password"
+  end
+  click_on 'Sign up'
 end
