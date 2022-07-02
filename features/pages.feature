@@ -1,4 +1,4 @@
-Feature: Important pages should be reliably visible
+Feature: Important pages should served
 
   Scenario: 
     Given Uncle is an user who has not signed up for an account

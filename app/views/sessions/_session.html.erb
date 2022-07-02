@@ -1,10 +1,10 @@
 <div class="card text-center mb-3">
   <div class="card-body">
-    <h2 class="card-title">
+    <h5 class="card-title">
       <%= link_to session_path(session) do %>
         <%= session.title %>
       <% end %>
-    </h2>
+    </h5>
     <p class="card-text">
       <%= session.description %>
       <% if session.user %>
