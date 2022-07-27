@@ -6,7 +6,9 @@
         <h5 class="card-title">Want the high resolution photo?</h5>
         <h3>Price: $<%= @session.default_price %></h3>
         <p class="card-text">The high-resolution photo will be directly downloaded once you complete the payment process.</p>
-        <p class="card-text">Thank you for supporting<%= ", #{@session.user.name}," if @session.user.name%> your photographer!</p>
+        <p class="card-text">
+          Thank you for supporting<%= ", #{@session.user.name}," unless @session.user.name.blank? %> your photographer!
+        </p>
 
         <%= render 'form', charge: @charge, attachment_id: @attachment.id %>
 
