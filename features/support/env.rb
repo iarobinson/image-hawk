@@ -4,7 +4,11 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'bundler'
+Bundler.setup
+
 require 'cucumber/rails'
+require 'rspec/core'
 
 # frozen_string_literal: true
 

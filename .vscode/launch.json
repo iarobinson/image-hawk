@@ -28,6 +28,13 @@
                 "-t",
                 "@debugger"
             ]
+        },
+        {
+            "name": "Cucumber 2nd",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/cucumber"
         }
     ]
 }
