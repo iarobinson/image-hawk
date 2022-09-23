@@ -1,7 +1,7 @@
 Feature: Users should be able to sign in and maintain access
 
   Scenario: A signed in user should have access to the administration dashboard
-    Given Uncle is an existing user
+    Given Uncle signs up as a user
     When Uncle visits the main page
     Then Uncle should see the administration page
 
@@ -16,3 +16,9 @@ Feature: Users should be able to sign in and maintain access
     Given Uncle is an user who has not signed up for an account
     And Uncle visits the main page
     Then Uncle should NOT see the administration page
+
+  Scenario: An unknown user should sign up and be redirected to their edit page
+    Given Uncle is an user who has not signed up for an account
+    When Uncle visits the sign up page
+    And Uncle submits valid email, password and password confirmation
+    Then Uncle should be redirected to the main index page

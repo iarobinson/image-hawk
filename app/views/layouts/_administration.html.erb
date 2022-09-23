@@ -37,8 +37,13 @@
                 All Sessions
               </div>
               <div class="card-body">
-                <% @sessions.reverse.each do |session| %>
-                  <%= render session %>
+                <% if @sessions.count > 0 %>
+                  <% @sessions.reverse.each do |session| %>
+                    <%= render session %>
+                  <% end %>
+                <% else %>
+                  <p>You have not created a session yet.</p>
+                  <%= link_to "Get Started", new_session_path, class: "btn btn-primary btn-block col-12" %>
                 <% end %>
               </div>
             </div>

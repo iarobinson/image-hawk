@@ -1,7 +1,9 @@
-Feature: Charges should work
+Feature: A stranger should be able to purchase an image
 
-  Scenario: 
-    Given Uncle is an user who has not signed up for an account
-    When Phil creates a session with assets
-    When Uncle visits the session page
-    Then Uncle should be able to make a purchase
+# TODO: This test needs to be implemented
+#  Scenario:
+#    Given Coco has photos for sale
+#    When Stranger visits Coco's session
+#    And Stranger clicks the buy button
+#    Then Coco have a charge on their account
+#
