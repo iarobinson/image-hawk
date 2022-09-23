@@ -21,4 +21,4 @@ Feature: Users should be able to sign in and maintain access
     Given Uncle is an user who has not signed up for an account
     When Uncle visits the sign up page
     And Uncle submits valid email, password and password confirmation
-    Then Uncle should be redirected to the edit user page
+    Then Uncle should be redirected to the main index page
