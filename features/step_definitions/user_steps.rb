@@ -42,22 +42,13 @@ Then '{word} should see the home page' do |user|
   expect(page).to have_content 'Sell your surf photography online'
 end
 
-
 When '{word} visits the sign up page'  do |user|
   visit new_user_registration_path
 end
 
-Then '{word} should be redirected to the edit user page'  do |user|
-  # pending
+Then '{word} should be redirected to the main index page'  do |user|
+  expect(page.current_url).to eq(root_url)
 end
-
-# def sign_in
-#   visit '/users/sign_in'
-#   fill_in "user_email", :with => @visitor[:email]
-#   fill_in "user_password", :with => @visitor[:password]
-#   click_button "Sign in"
-# end
-
 def sign_in user
   visit '/users/sign_in'
   if user == "invalid credentials"
@@ -83,26 +74,6 @@ def sign_up user
   end
   click_on 'Sign up'
 end
-
-# def sign_up
-#   delete_user
-#   visit '/users/sign_up'
-#   fill_in "user_name", :with => @visitor[:name]
-#   fill_in "user_email", :with => @visitor[:email]
-#   fill_in "user_password", :with => @visitor[:password]
-#   fill_in "user_password_confirmation", :with => @visitor[:password_confirmation]
-#   click_button "Sign up"
-#   find_user
-# end
-
-
-
-
-############### COPIED FROM https://github.com/awesome/rails6-mongoid-devise-rspec-cucumber/blob/master/LICENSE.md
-
-
-### UTILITY METHODS ###
-
 def create_visitor
   @visitor ||= {
     name: "Manny Testerman",
@@ -136,17 +107,6 @@ def delete_user
   @user ||= User.where(:email => @visitor[:email]).first
   @user.destroy unless @user.nil?
 end
-
-# def sign_up
-#   delete_user
-#   visit '/users/sign_up'
-#   fill_in "user_name", :with => @visitor[:name]
-#   fill_in "user_email", :with => @visitor[:email]
-#   fill_in "user_password", :with => @visitor[:password]
-#   fill_in "user_password_confirmation", :with => @visitor[:password_confirmation]
-#   click_button "Sign up"
-#   find_user
-# end
 
 def sign_out username
   visit "/"
