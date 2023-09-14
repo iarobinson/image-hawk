@@ -13,6 +13,14 @@ Keep it simple!
 - Ruby on Rails (ActionStorage)
 - Bootstrap 5 - Currenly just added with CDN link
 
+# Local Development
+
+This is a typical rails application:
+`git clone`
+`bundle exec rails db:migrate`
+`rails s`
+and navigate in the browser to `localhost:3000`
+
 # Testing
 
 For standard tests: `rails test`
