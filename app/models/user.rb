@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  #
+  scope :recently_created, -> {
+    where("created_at >= ?", Date.today - 2.days)
+  }
+  #
   extend FriendlyId
   friendly_id :name, use: :slugged
   has_many :charges
