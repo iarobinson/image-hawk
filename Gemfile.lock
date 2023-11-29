@@ -144,6 +144,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    dockerfile-rails (1.5.12)
+      rails (>= 3.0.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -209,6 +211,8 @@ GEM
       net-protocol
     nio4r (2.6.1)
     nokogiri (1.15.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.4)
@@ -320,6 +324,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3
@@ -329,6 +334,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  dockerfile-rails (>= 1.5)
   dotenv-rails
   friendly_id (~> 5.4.0)
   image_processing (~> 1.2)
