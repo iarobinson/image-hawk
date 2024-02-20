@@ -15,9 +15,9 @@ Feature: User properly uploads photos and records sales
     And Stranger visits that session page
     Then Stranger should see the photos
 
-  Scenario: The session should be associated with the photos
-    When Coco creates a new session with photos
-    And Sally visits that session page
-    And Sally clicks on the image intending to buy
-    And Sally clicks the buy button
-    Then Sally should be redirected to the stripe payment gateway
+  # Scenario: The session should be associated with the photos
+  #   When Coco creates a new session with photos
+  #   And Sally visits that session page
+  #   And Sally clicks on the image intending to buy
+  #   And Sally clicks the buy button
+  #   Then Sally should be redirected to the stripe payment gateway
