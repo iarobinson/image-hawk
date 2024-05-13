@@ -362,7 +362,7 @@ DEPENDENCIES
   rspec
   selenium-webdriver
   spring
-  sprockets-rails
+  sprockets-rails (= 3.4.2)
   stimulus-rails
   stripe
   turbo-rails (~> 1.0.0)
