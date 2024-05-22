@@ -10,7 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
-gem 'pg'
+gem 'pg', '1.5.6'
 gem 'puma'
 gem "importmap-rails"
 gem "turbo-rails", '~> 1.0.0'
