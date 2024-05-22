@@ -1,0 +1,22 @@
+<!-- app/views/map/index.html.erb -->
+
+<h1>Spots</h1>
+<div id="map" style="height: 400px;"></div>
+
+<script>
+  var map = L.map('map').setView([0, 0], 2); // Set initial center and zoom level
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Add markers for surf spots
+  <% @surf_spots.each do |surf_spot| %>
+    L.marker([<%= surf_spot.latitude %>, <%= surf_spot.longitude %>])
+      .addTo(map)
+      .bindPopup('<%= surf_spot.name %>')
+      .on('click', function() {
+        window.location.href = '<%= spot_path(surf_spot) %>';
+      });
+  <% end %>
+</script>

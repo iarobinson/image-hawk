@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
+  get 'map', to: 'map#index'
   get '/about', to: 'pages#about'
   get '/explore', to: 'sessions#explore'
   get '/test-route', to: 'pages#test'

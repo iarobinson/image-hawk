@@ -4,13 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 
 gem 'rails', '~> 7.0.0'
-gem "sprockets-rails"
+gem "sprockets-rails", '3.4.2'
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 gem "money-rails"
 gem 'friendly_id', '~> 5.4.0'
-gem 'pg'
+gem 'pg', '1.5.6'
 gem 'puma'
 gem "importmap-rails"
 gem "turbo-rails", '~> 1.0.0'
