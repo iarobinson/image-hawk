@@ -21,7 +21,7 @@ Rails.application.configure do
   # Show full error reports. 
   # Change this to locally get default rails error messages.
   # Restart rails local server for changes to go into effect.
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
 
   # Enable server timing
   config.server_timing = true
