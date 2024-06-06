@@ -2,7 +2,7 @@ require "test_helper"
 
 class SpotsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @spot = spots(:one)
+    @spot = spots(:spot_one)
   end
 
   test "should get index" do

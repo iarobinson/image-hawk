@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :spots
   get 'errors/not_found'
   get 'errors/internal_server_error'
+  get 'wods', to: "wods#index"
 
   match '/404', to: "errors#not_found", via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
