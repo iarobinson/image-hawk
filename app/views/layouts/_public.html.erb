@@ -10,51 +10,16 @@
         <h2 class="mt-4">
           Sell your surf photography online
         </h2>
-        <p class="lead text-secondary mt-4">
-          A place where you can upload the photographs that you take of people surfing and they can buy it online. Make more money as a surf photographer.
-        </p>
-
-        <%= link_to "Get Started", new_user_registration_path, class: "btn btn-outline-primary" %>
-        <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-success" %>
       </div>
 
       <div class="col-md-6 position-relative mt-5 mt-md-0 ps-lg-5">
-        <%= image_tag 'stranger-page/feature-3', class: 'img-fluid position-relative rounded' %>
-      </div>
-    </div>
-
-    <% if @sessions.count > 0 %>
-      <div class="row">
-        <div class="col">
-          <h2 class="pt-3">Recent sessions:</h2>
+        <%= render "devise/sessions/login_form", resource: @resource, resource_name: @resource_name, devise_mapping: @devise_mapping %>
+        <div class="col-12 d-flex justify-content-center">
+        <hr>
+        <%= link_to "Create new account", new_user_registration_path, class: "btn btn-success center my-1" %>
         </div>
       </div>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5">
-        <% @sessions.reverse.each do |session| %>
-          <div class="col mt-5">
-            <div class="card shadow-light hover-lift-light">
-              <%= image_tag session.images.sample.variant(resize_to_limit: [300, 300]) if session.images.count > 0 %>
-              <div class="card-body">
-                <%= link_to session_path(session), class: "h4 text-dark text-decoration-none" do %>
-                  <%= session.title if session.title %>
-                <% end %>
-                <p>
-                  <%= session.created_at.strftime("%B %-d, %Y") %>
-                </p>
-                <p>
-                  Session Photos (<%= session.images.count %>)
-                </p>
-                <p>
-                  <%= session.description if session.description %>
-                </p>
-                <%= link_to "See More", session_path(session), class: "btn btn-primary col-12" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    </div>
   </section>
 
   <div class="row py-5">

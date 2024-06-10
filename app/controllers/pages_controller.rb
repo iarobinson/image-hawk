@@ -10,6 +10,10 @@ class PagesController < ApplicationController
       end
       
     else
+      @resource_name = :user
+      @resource = User.new
+      @devise_mapping = Devise.mappings[:user]
+
       @past_sessions = the_last_10_sessions
     end
     @sessions = the_last_10_sessions

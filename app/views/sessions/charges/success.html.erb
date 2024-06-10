@@ -3,7 +3,9 @@
     <div class="<%= common_column_spacing %>">
       <h1 class="mt-3">Payment Successful</h1>
       <%= render 'sessions/charges/display' %>
-      <p class="text-muted">Please make sure to download this image to your computer. Our servers will only keep this image on hand for 30 days after the photographer added them to our website.</p>
+      <p class="text-muted">
+        Please make sure to download this image to your computer. Our servers will only keep this image on hand for 30 days after the photographer added them to our website.
+      </p>
       <a href="<%= url_for(@attachment) %>" download="image-hawk-<%= @attachment.id %>" class="btn btn-success btn-block col-12 my-1">Download</a>
       <%= link_to "Back to Session", session_path(@session), class: "btn btn-primary btn-block col-12 my-1" %>
       <%= link_to "More from this Photographer", user_path(@session.user), class: "btn btn-dark btn-block col-12 my-1" %>

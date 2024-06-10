@@ -1,0 +1,32 @@
+<% if @sessions.count > 0 %>
+  <div class="row">
+    <div class="col">
+      <h2 class="pt-3">Recent sessions:</h2>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5">
+    <% @sessions.reverse.each do |session| %>
+      <div class="col mt-5">
+        <div class="card shadow-light hover-lift-light">
+          <%= image_tag session.images.sample.variant(resize_to_limit: [300, 300]) if session.images.count > 0 %>
+          <div class="card-body">
+            <%= link_to session_path(session), class: "h4 text-dark text-decoration-none" do %>
+              <%= session.title if session.title %>
+            <% end %>
+            <p>
+              <%= session.created_at.strftime("%B %-d, %Y") %>
+            </p>
+            <p>
+              Session Photos (<%= session.images.count %>)
+            </p>
+            <p>
+              <%= session.description if session.description %>
+            </p>
+            <%= link_to "See More", session_path(session), class: "btn btn-primary col-12" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
