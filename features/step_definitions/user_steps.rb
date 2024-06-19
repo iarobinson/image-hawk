@@ -12,15 +12,7 @@ Given '{word} is an user who has not signed up for an account' do |user|
   # TODO: This shouldn't do anything really....
 end
 
-When '{word} visits the main page' do |user|
-  visit root_path
-end
-
-When '{word} visits the create new account page' do |user|
-  visit new_user_registration_path
-end
-
-When '{word} submits valid email, password and password confirmation' do |user|
+When '{word} submits valid sign up email, password and password confirmation' do |user|
   within '#new_user' do
     fill_in 'user_email', with: 'new-test-user@testing.com'
     fill_in 'user_password', with: 'testUser123'
@@ -42,13 +34,20 @@ Then '{word} should see the home page' do |user|
   expect(page).to have_content 'Sell your surf photography online'
 end
 
-When '{word} visits the sign up page'  do |user|
-  visit new_user_registration_path
+When '{string} visits the {string} page'  do |user, destination|
+  if destination == "sign up"
+    visit new_user_registration_path
+  elsif destination == "index"
+    visit root_path
+  else
+    raise "The destination needs to be filled out in user_steps.rb"
+  end
 end
 
 Then '{word} should be redirected to the main index page'  do |user|
   expect(page.current_url).to eq(root_url)
 end
+
 def sign_in user
   visit '/users/sign_in'
   if user == "invalid credentials"

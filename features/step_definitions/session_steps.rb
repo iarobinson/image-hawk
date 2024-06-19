@@ -23,10 +23,19 @@ When('{word} clicks on the image intending to buy') do |username|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When('{word} clicks the buy button') do |username|
-  pending # Write code here that turns the phrase above into concrete actions
+When('{string} clicks the {string} button') do |username, button_text|
+  page.click_link(button_text)
+end
+
+Then('{string} should be redirected to the {string}') do |username, destination_path|
+  if destination_path == "sign up page"
+    expect(page.current_path == "/users/sign_up")
+  else
+    pending
+  end
 end
 
 Then('{word} should be redirected to the stripe payment gateway') do |username|
   pending # Write code here that turns the phrase above into concrete actions
 end
+
