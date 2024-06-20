@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+    binding.pry
     if current_user
       @past_sessions = current_user.sessions
       @earnings = Charge.where({seller: current_user, payment_successful: true})

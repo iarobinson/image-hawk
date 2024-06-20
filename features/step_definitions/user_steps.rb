@@ -29,27 +29,34 @@ Then '{word} should NOT see the administration page' do |user|
   expect(page).not_to have_selector('#admin-page')
 end
 
-Then '{word} should see the home page' do |user|
-  expect(page).not_to have_selector '#admin-page'
-  expect(page).to have_content 'Sell your surf photography online'
-end
 
 When '{string} visits the {string} page'  do |user, destination|
   if destination == "sign up"
     visit new_user_registration_path
-  elsif destination == "index"
+  elsif destination == "index" || destination == "main"
     visit root_path
+  elsif destination == "about"
+    visit about_path
   else
     raise "The destination needs to be filled out in user_steps.rb"
   end
 end
 
-Then '{word} should be redirected to the main index page'  do |user|
-  expect(page.current_url).to eq(root_url)
+Then '{word} should be on the {string} page'  do |user, destination|
+  word_to_location = {
+    :about => "/about",
+    :home => "/",
+    :main => "/"
+  }
+  if destination == "administration"
+    expect(page).to have_selector('#admin-page')
+  else
+    expect(page.current_path).to eq(word_to_location[destination.to_sym])
+  end
 end
 
 def sign_in user
-  visit '/users/sign_in'
+  visit root_path
   if user == "invalid credentials"
     within '#new_user' do
       fill_in 'user_email', with: "invalid@testing.com"
@@ -60,6 +67,8 @@ def sign_in user
       fill_in 'user_email', with: user.email
       fill_in 'user_password', with: user.password
     end
+  else
+    raise "User not present and credentials valid. Look to user_steps.rb to fix"
   end
   click_on 'Log in'
 end
@@ -247,7 +256,7 @@ Then "{word} should be signed out" do |username|
   page.should_not have_selector "#admin-page"
 end
 
-Then /^I see an unconfirmed account message$/ do
+Then "I see an unconfirmed account message" do
   page.should have_content "You have to confirm your account before continuing."
 end
 
@@ -295,3 +304,6 @@ Then "{word} should see their name" do |username|
   page.should have_content @user[:name]
 end
 
+Then '{string} should see an error message' do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
