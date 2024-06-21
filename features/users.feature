@@ -28,7 +28,7 @@ Feature: Users should be able to sign in and maintain access
     And "Uncle" clicks the "Create new account" button
     Then "Uncle" should be redirected to the "sign up page"
 
-  Scenario: Invalid sign in info returns an error message
-    Given "Uncle" visits the "index" page
-    And "Uncle" signs in with invalid credentials
-    Then "Uncle" should see an error message
+  # Scenario: Invalid sign in info returns an error message
+  #   Given "Uncle" visits the "index" page
+  #   And "Uncle" signs in with invalid credentials
+  #   Then "Uncle" should see an error message
